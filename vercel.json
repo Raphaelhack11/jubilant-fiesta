@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "givebridge-donation-app",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Cache-Control": "s-maxage=31536000, max-age=0, public"
+      },
+      "dest": "/index.html"
+    }
+  ]
+}
